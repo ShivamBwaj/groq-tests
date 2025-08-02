@@ -23,9 +23,10 @@ while True:
     response=client.chat.completions.create(
         model="llama3-8b-8192",
         messages=chat_history,
-        temperature=0.7, #temperature=0.7 controls creativity. Lower is more factual, higher is more random.
+        temperature=0.7, 
     )
 
     reply = response.choices[0].message.content
     print("AI: ", reply)
     chat_history.append({"role":"assistant","content": reply})
+
